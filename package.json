@@ -1,0 +1,38 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "API test project",
+  "main": "src/index.js",
+  "dependencies": {
+    "axios": "0.19.2",
+    "classnames": "2.2.6",
+    "lodash": "4.17.15",
+    "react": "16.12.0",
+    "react-bootstrap": "1.0.1",
+    "react-dom": "16.12.0",
+    "react-placeholder": "4.0.1",
+    "react-scripts": "3.0.1",
+    "react-transition-group": "4.3.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.5.0",
+    "@testing-library/react": "^10.0.3",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-react": "^7.19.0",
+    "node-sass": "^4.14.0",
+    "prettier": "^2.0.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

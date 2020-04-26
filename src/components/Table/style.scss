@@ -1,0 +1,7 @@
+.output-table-enter {
+  opacity: 0.5;
+}
+.output-table-enter-active {
+  opacity: 1;
+  transition: opacity 1000ms;
+}
