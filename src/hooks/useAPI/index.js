@@ -4,15 +4,15 @@ import dispatchAPI from "services/api";
 const PRE_API_CALL_DELAY_MS = 1000;
 
 const promiseDelay = (ms = 0) =>
-  new Promise((resolve, reject) => {
+  new Promise((resolve) => {
     setTimeout(() => resolve(), ms);
   });
 
 export default function useAPI() {
   const [loading, setLoading] = useState(false);
-  const [apiData, setApiData] = useState(null);
+  const [data, setApiData] = useState(null);
 
-  const callAPIRef = useRef(request => {
+  const callAPIRef = useRef((request) => {
     (async () => {
       try {
         setLoading(true);
@@ -21,12 +21,11 @@ export default function useAPI() {
         setApiData(response.data);
         setLoading(false);
       } catch (error) {
-        console.log(error.message);
         setApiData({ error: error.message });
         setLoading(false);
       }
     })();
   });
 
-  return { loading, apiData, callAPI: callAPIRef.current };
+  return { loading, data, callAPI: callAPIRef.current };
 }

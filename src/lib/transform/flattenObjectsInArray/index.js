@@ -14,7 +14,7 @@ const flattenObject = (o, prefix = "", result = {}, keepNull = true) => {
   }
 
   if (isArray(o) || isPlainObject(o)) {
-    for (let i in o) {
+    for (const i in o) {
       let pref = prefix;
       if (isArray(o)) {
         pref = pref + `[${i}]`;
@@ -32,6 +32,6 @@ const flattenObject = (o, prefix = "", result = {}, keepNull = true) => {
   return result;
 };
 
-export default function flattenObjects(data) {
-  return data.map(object => flattenObject(object));
+export default function flattenObjectsInArray(data) {
+  return data.map((object) => flattenObject(object));
 }
