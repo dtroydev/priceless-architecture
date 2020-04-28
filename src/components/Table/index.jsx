@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import BootstrapTable from "react-bootstrap/Table";
 import TableHeader from "components/Table/Header";
 import TableBody from "components/Table/Body";
@@ -7,8 +8,13 @@ import "components/Table/style.scss";
 
 const TRANSITION_DELAY_MS = 1000;
 
+Table.propTypes = {
+  loading: PropTypes.bool.isRequired,
+  data: PropTypes.array,
+};
+
 export default function Table(props) {
-  const { data, loading } = props;
+  const { loading, data } = props;
   return (
     <CSSTransition
       in={!loading}

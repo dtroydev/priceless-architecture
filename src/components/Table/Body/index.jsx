@@ -1,6 +1,12 @@
 import React from "react";
+import PropTypes from "prop-types";
 import TableBodyPlaceholders from "components/Table/Body/Placeholders";
 import TableBodyRows from "components/Table/Body/Rows";
+
+TableBody.propTypes = {
+  loading: PropTypes.bool.isRequired,
+  data: PropTypes.array,
+};
 
 export default function TableBody(props) {
   const { loading, data } = props;

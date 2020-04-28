@@ -1,4 +1,9 @@
 import React from "react";
+import PropTypes from "prop-types";
+
+TableBodyRows.propTypes = {
+  data: PropTypes.array.isRequired,
+};
 
 export default function TableBodyRows(props) {
   const { data } = props;

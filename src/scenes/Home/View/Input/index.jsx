@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
@@ -8,7 +9,11 @@ import { API_ENDPOINTS } from "services/api/config";
 import classNames from "classnames";
 import "scenes/Home/View/Input/style.scss";
 
-const APIEndpointOptions = (props) => {
+APIEndpointOptions.propTypes = {
+  API: PropTypes.object.isRequired,
+};
+
+function APIEndpointOptions(props) {
   const { API } = props;
 
   return (
@@ -18,6 +23,11 @@ const APIEndpointOptions = (props) => {
       ))}
     </>
   );
+}
+
+Input.propTypes = {
+  loading: PropTypes.bool.isRequired,
+  handleInput: PropTypes.func.isRequired,
 };
 
 export default function Input(props) {

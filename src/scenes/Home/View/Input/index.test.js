@@ -3,7 +3,7 @@ import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import Input from "scenes/Home/View/Input";
 
-const handleInput = jest.fn(e => e.preventDefault());
+const handleInput = jest.fn((e) => e.preventDefault());
 
 it("Should have 1 form with 1 select, 1 input and 1 button in it", () => {
   const { container } = render(

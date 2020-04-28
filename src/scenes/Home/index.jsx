@@ -4,12 +4,12 @@ import useAPI from "hooks/useAPI";
 import useDataTransform from "hooks/useDataTransform";
 import ensureIsArray from "lib/transform/ensureIsArray";
 import flattenObjectsInArray from "lib/transform/flattenObjectsInArray";
-import stringifyValuesInObjectsInArray from "lib/transform/stringifyValuesInObjectsInArray";
+import stringifyBooleansInObjectsInArray from "lib/transform/stringifyBooleansInObjectsInArray";
 
 const HOME_VIEW_DATA_TRANSFORMS = [
   ensureIsArray,
   flattenObjectsInArray,
-  stringifyValuesInObjectsInArray,
+  stringifyBooleansInObjectsInArray,
 ];
 
 export default function Home() {
@@ -24,7 +24,7 @@ export default function Home() {
 
   useEffect(() => {
     if (!loading && apiData) transformData(HOME_VIEW_DATA_TRANSFORMS, apiData);
-  }, [loading, apiData]);
+  }, [loading, apiData, transformData]);
 
   return <HomeView data={data} loading={loading} handleInput={handleInput} />;
 }

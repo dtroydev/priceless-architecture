@@ -1,11 +1,18 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Input from "scenes/Home/View/Input";
 import Output from "scenes/Home/View/Output";
 
-export default function Home(props) {
+HomeView.propTypes = {
+  handleInput: PropTypes.func.isRequired,
+  loading: PropTypes.bool.isRequired,
+  data: PropTypes.array,
+};
+
+export default function HomeView(props) {
   const { handleInput, loading, data } = props;
   return (
     <Container fluid>
