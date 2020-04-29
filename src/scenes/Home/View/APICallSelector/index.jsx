@@ -7,7 +7,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { API_ENDPOINTS } from "services/api/config";
 import classNames from "classnames";
-import "scenes/Home/View/Input/style.scss";
+import "scenes/Home/View/APICallSelector/style.scss";
 
 APIEndpointOptions.propTypes = {
   API: PropTypes.object.isRequired,
@@ -25,13 +25,9 @@ function APIEndpointOptions(props) {
   );
 }
 
-Input.propTypes = {
-  loading: PropTypes.bool.isRequired,
-  handleInput: PropTypes.func.isRequired,
-};
-
-export default function Input(props) {
+const APICallSelectorMemo = React.memo(function APICallSelector(props) {
   const { loading, handleInput } = props;
+
   return (
     <Container fluid>
       <Row>
@@ -73,4 +69,11 @@ export default function Input(props) {
       </Row>
     </Container>
   );
-}
+});
+
+APICallSelectorMemo.propTypes = {
+  loading: PropTypes.bool.isRequired,
+  handleInput: PropTypes.func.isRequired,
+};
+
+export default APICallSelectorMemo;

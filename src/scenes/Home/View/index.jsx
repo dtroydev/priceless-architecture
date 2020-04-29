@@ -3,17 +3,12 @@ import PropTypes from "prop-types";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Input from "scenes/Home/View/Input";
-import Output from "scenes/Home/View/Output";
+import APICallSelector from "scenes/Home/View/APICallSelector";
+import Results from "scenes/Home/View/Results";
 
-HomeView.propTypes = {
-  handleInput: PropTypes.func.isRequired,
-  loading: PropTypes.bool.isRequired,
-  data: PropTypes.array,
-};
-
-export default function HomeView(props) {
+const HomeViewMemo = React.memo(function HomeView(props) {
   const { handleInput, loading, data } = props;
+
   return (
     <Container fluid>
       <Row className="justify-content-center">
@@ -23,14 +18,22 @@ export default function HomeView(props) {
       </Row>
       <Row className="mt-4 justify-content-center">
         <Col xs="auto" sm="auto">
-          <Input handleInput={handleInput} loading={loading} />
+          <APICallSelector handleInput={handleInput} loading={loading} />
         </Col>
       </Row>
       <Row className="mt-5 justify-content-center">
         <Col xs="auto" sm="auto">
-          <Output data={data} loading={loading} />
+          <Results data={data} loading={loading} />
         </Col>
       </Row>
     </Container>
   );
-}
+});
+
+HomeViewMemo.propTypes = {
+  handleInput: PropTypes.func.isRequired,
+  loading: PropTypes.bool.isRequired,
+  data: PropTypes.array,
+};
+
+export default HomeViewMemo;

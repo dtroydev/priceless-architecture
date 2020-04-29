@@ -5,12 +5,12 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Table from "components/Table";
 
-Output.propTypes = {
+Results.propTypes = {
   data: PropTypes.array,
   loading: PropTypes.bool.isRequired,
 };
 
-export default function Output(props) {
+export default function Results(props) {
   const { data, loading } = props;
 
   return (
